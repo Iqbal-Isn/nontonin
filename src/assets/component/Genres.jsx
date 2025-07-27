@@ -46,12 +46,12 @@ function Genres() {
   }, []);
 
   return (
-    <div className="relative container mx-auto mt-5 mb-10">
-      <div className="flex flex-wrap gap-2">
+    <div className="relative container mx-auto mt-5 mb-10 pl-4 sm:pl-2">
+      <div className="flex flex-nowrap sm:flex-wrap gap-2 overflow-x-auto scrollbar-hide">
         {genre.map((genre) => (
           <Link
             key={genre.id}
-            className="px-4 py-2 rounded-md bg-[#1c1c1e] text-gray-300 text-md hover:bg-[#2c2c2e] transition"
+            className="px-3 py-2 sm:px-4 sm:py-2 rounded-md bg-[#1c1c1e] text-gray-300 text-md hover:bg-[#2c2c2e] transition whitespace-nowrap"
             to={`genre/${genre.id}`}
             state={{ name: genre.name }}
           >

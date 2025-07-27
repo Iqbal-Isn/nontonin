@@ -56,11 +56,9 @@ export default function Header() {
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
-              {/* LEFT SECTION: burger + logo */}
               <div className="flex items-center">
-                {/* Burger (mobile only) */}
                 <div className="sm:hidden">
-                  <Disclosure.Button
+                  <DisclosureButton
                     onClick={handleClick}
                     className="inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                   >
@@ -69,16 +67,19 @@ export default function Header() {
                     ) : (
                       <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                     )}
-                  </Disclosure.Button>
+                  </DisclosureButton>
                 </div>
 
                 {/* Logo */}
                 <Link to="/" className="flex-shrink-0">
-                  <img src={imgLogo} alt="Logo" className="h-30 w-auto" />
+                  <img
+                    src={imgLogo}
+                    alt="Logo"
+                    className="h-25 sm:h-30 w-auto"
+                  />
                 </Link>
               </div>
 
-              {/* CENTER NAVIGATION (desktop only) */}
               <div className="hidden sm:flex flex-1 justify-center">
                 <ul className="flex space-x-4">
                   {navigation.map((item) => (
@@ -100,7 +101,6 @@ export default function Header() {
                 </ul>
               </div>
 
-              {/* RIGHT SECTION: Search (always visible) */}
               <div className="ml-4">
                 <div className="relative text-white">
                   <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -125,14 +125,13 @@ export default function Header() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onKeyDown={handleSearch}
-                    className="pl-11 pr-3 py-1 rounded-md bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring focus:ring-white/30 w-36 sm:w-60"
+                    className="pl-11 pr-3 py-1 rounded-md bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring focus:ring-white/30 w-32 sm:w-60"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* MOBILE MENU  */}
           <DisclosurePanel className="sm:hidden px-4 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <DisclosureButton

@@ -48,14 +48,16 @@ const Slider = (props) => {
   }, []);
 
   return (
-    <div className="relative container mx-auto mt-5 mb-15">
-      <h2 className="text-2xl font-normal text-white mb-8">{props.heading}</h2>
+    <div className="relative container mx-auto mt-5 mx-auto ">
+      <h2 className="text-l sm:text-2xl font-normal text-white mb-4">
+        {props.heading}
+      </h2>
 
       {/* Arrow Left */}
       {!isStart && (
         <button
           onClick={scrollLeft}
-          className="absolute z-10 left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-80 transition"
+          className="absolute z-10 left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-80 transition hidden sm:block"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +87,7 @@ const Slider = (props) => {
       {!isEnd && (
         <button
           onClick={scrollRight}
-          className="absolute z-10 right-0 top-1/2 -translate-y-1/2 bg-black/60 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-80 transition"
+          className="absolute z-10 right-0 top-1/2 -translate-y-1/2 bg-black/60 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-80 transition hidden sm:block"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

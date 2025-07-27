@@ -19,7 +19,7 @@ const Banner = () => {
 
     fetch(url, options)
       .then((res) => res.json())
-      .then((json) => setMovie(json.results[13]))
+      .then((json) => setMovie(json.results[16]))
       .catch((err) => console.error(err));
   }, []);
 
@@ -27,7 +27,7 @@ const Banner = () => {
 
   return (
     <div
-      className="relative h-[600px] text-white flex items-center"
+      className="relative h-[400px] sm:h-[600px] text-white flex sm:items-center items-end"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
         backgroundSize: "cover",
@@ -39,9 +39,11 @@ const Banner = () => {
 
       <div className="container mx-auto px-6 z-20">
         <div className="max-w-xl">
-          <h1 className="text-4xl font-bold mb-6">{movie.original_title}</h1>
-          <p className="mb-6 text-md">{movie.overview}</p>
-          <div className="flex gap-4 mt-10">
+          <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">
+            {movie.original_title}
+          </h1>
+          <p className="text-sm sm:text-md mb-6">{movie.overview}</p>
+          <div className="sm:flex gap-4 mt-10 hidden">
             <Link
               to={`/movie/${movie.id}`}
               className="bg-white text-black px-5 h-12 py-2 rounded-full font-medium hover:bg-gray-200 transition flex items-center gap-x-2"

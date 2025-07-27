@@ -64,52 +64,69 @@ const Home = () => {
     <>
       <Banner />
       <Genres />
-      <Slider
-        contents={movie.slice(0).map((item, index) => {
-          const type = item.title || item.original_title ? "movie" : "tv";
-          return (
-            <div key={index} className="shrink-0">
-              <Link to={`/${type}/${item.id}`}>
-                <Card
-                  title={item.original_title || item.name || item.title}
-                  image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </Link>
-            </div>
-          );
-        })}
-        heading="Popular Movies"
-      />
+      <div className="text-white px-4 sm:px-6">
+        <Slider
+          contents={movie.slice(0).map((item, index) => {
+            const type = item.title || item.original_title ? "movie" : "tv";
+            return (
+              <div key={index} className="shrink-0 mb-8">
+                <Link to={`/${type}/${item.id}`}>
+                  <Card
+                    title={item.original_title || item.name || item.title}
+                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+          heading="Popular Movies"
+        />
 
-      <Slider
-        contents={tv.slice(0).map((item, index) => {
-          const type = item.title || item.original_title ? "movie" : "tv";
-          return (
-            <div key={index} className="shrink-0">
-              <Link to={`/${type}/${item.id}`}>
-                <Card
-                  title={item.original_title || item.name || item.title}
-                  image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </Link>
-            </div>
-          );
-        })}
-        heading="Popular TV Shows"
-      />
+        <Slider
+          contents={tv.slice(0).map((item, index) => {
+            const type = item.title || item.original_title ? "movie" : "tv";
+            return (
+              <div key={index} className="shrink-0 mb-8">
+                <Link to={`/${type}/${item.id}`}>
+                  <Card
+                    title={item.original_title || item.name || item.title}
+                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+          heading="Popular TV Shows"
+        />
 
-      <Slider
-        contents={cast.map((cast, key) => (
-          <Link key={key} to={`/cast/${cast.id}`} className="mr-3 sm:mr-6">
-            <CastCard
-              image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
-              alt={cast.name}
-              name={cast.name}
-            />
-          </Link>
-        ))}
-        heading="Cast Member"
-      />
+        <Slider
+          contents={cast.map((cast, key) => (
+            <Link
+              key={key}
+              to={`/cast/${cast.id}`}
+              className="mr-3 sm:mr-6 text-center mb-8"
+            >
+              {cast.profile_path ? (
+                <CastCard
+                  image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
+                  alt={cast.name}
+                  name={cast.name}
+                />
+              ) : (
+                <div className="w-16 sm:w-32">
+                  <div className="w-[100%] h-16 sm:h-32 rounded-full bg-gray-700 flex items-center justify-center text-white text-sm mx-auto">
+                    No Image
+                  </div>
+                  <p className="mt-3 text-sm sm:text-md text-white text-center truncate overflow-hidden whitespace-nowrap w-full">
+                    {cast.name}
+                  </p>
+                </div>
+              )}
+            </Link>
+          ))}
+          heading="Cast Member"
+        />
+      </div>
     </>
   );
 };
