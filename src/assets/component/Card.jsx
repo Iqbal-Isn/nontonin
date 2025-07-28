@@ -1,7 +1,7 @@
 const Card = (props) => {
   return (
     <div>
-      <div className="relative w-[90px] h-[100%] sm:w-[200px] sm:h-[320px] rounded-md overflow-hidden shadow-lg bg-gray-800 flex-shrink-0 group">
+      <div className="relative w-[110px] h-[100%] sm:w-[200px] sm:h-[320px] rounded-md overflow-hidden shadow-lg bg-gray-800 flex-shrink-0 group">
         <img
           src={props.image}
           alt={props.title}

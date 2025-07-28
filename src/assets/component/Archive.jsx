@@ -55,34 +55,31 @@ const Archive = () => {
     return (
       <>
         <div className="h-screen flex justify-center items-center bg-black">
-          <PacmanLoader color="#ffffff" size={80} />
+          <PacmanLoader color="#ffffff" size={60} />
         </div>
       </>
     );
 
   return (
     <>
-      <div className="relative container mx-auto mb-15">
+      <div className="relative container mx-auto mb-15 px-4">
         {!genreInMovie && !genreInTV ? (
           <h2 className="text-2xl font-normal text-md text-white mb-10 pt-25">
             Tidak ada data
           </h2>
         ) : (
-          <h2 className="text-2xl font-normal text-md text-white mb-10 pt-25">
-            Hasil untuk genre <span className="italic">{genreName}</span>
+          <h2 className="text-2xl sm:text-3xl font-normal text-md text-white mb-10 pt-25 text-center">
+            <span className="italic">{genreName}</span>
           </h2>
         )}
 
         {genreInMovie && (
           <>
-            <h2 className="text-2xl font-normal text-white mb-2 pt-10">
-              Movie
-            </h2>
             <Slider
               contents={movie.map((item, index) => {
                 const type = item.title || item.original_title ? "movie" : "tv";
                 return (
-                  <div key={index} className="shrink-0">
+                  <div key={index} className="shrink-0 mb-12">
                     <Link to={`/${type}/${item.id}`}>
                       <Card
                         title={item.original_title || item.name || item.title}
@@ -92,18 +89,18 @@ const Archive = () => {
                   </div>
                 );
               })}
+              heading="Movies"
             />
           </>
         )}
 
         {genreInTV && (
           <>
-            <h2 className="text-2xl font-normal text-white mb-2">TV</h2>
             <Slider
               contents={tv.map((item, index) => {
                 const type = item.title || item.original_title ? "movie" : "tv";
                 return (
-                  <div key={index} className="shrink-0">
+                  <div key={index} className="shrink-0 mb-8">
                     <Link to={`/${type}/${item.id}`}>
                       <Card
                         title={item.original_title || item.name || item.title}
@@ -113,6 +110,7 @@ const Archive = () => {
                   </div>
                 );
               })}
+              heading="Series"
             />
           </>
         )}

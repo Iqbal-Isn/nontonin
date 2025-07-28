@@ -51,7 +51,7 @@ function Genres() {
         {genre.map((genre) => (
           <Link
             key={genre.id}
-            className="px-3 py-2 sm:px-4 sm:py-2 rounded-md bg-[#1c1c1e] text-gray-300 text-md hover:bg-[#2c2c2e] transition whitespace-nowrap"
+            className="px-3 py-2 sm:px-4 sm:py-2 rounded-md bg-[#1c1c1e] text-gray-300 text-sm  hover:bg-[#2c2c2e] transition whitespace-nowrap"
             to={`genre/${genre.id}`}
             state={{ name: genre.name }}
           >

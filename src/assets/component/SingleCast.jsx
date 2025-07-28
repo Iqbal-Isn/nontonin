@@ -51,7 +51,7 @@ const SingleCast = () => {
     return (
       <>
         <div className="h-screen flex justify-center items-center bg-black">
-          <PacmanLoader color="#ffffff" size={80} />
+          <PacmanLoader color="#ffffff" size={40} />
         </div>
       </>
     );
@@ -60,7 +60,6 @@ const SingleCast = () => {
     <div className="text-white min-h-screen px-4 sm:px-6 py-10">
       {/* Profile Section */}
       <div className="flex flex-col md:flex-row container mx-auto gap-10 items-center md:items-start mt-20 mb-16">
-        {/* Foto */}
         <div className="w-full md:w-1/3 flex justify-center">
           {cast.profile_path ? (
             <img
@@ -75,7 +74,6 @@ const SingleCast = () => {
           )}
         </div>
 
-        {/* Info */}
         <div className="w-full md:w-2/3">
           <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-center md:text-left">
             {cast.name}
@@ -118,8 +116,6 @@ const SingleCast = () => {
           </p>
         </div>
       </div>
-
-      {/* Related Movies & TV */}
 
       <Slider
         contents={movie

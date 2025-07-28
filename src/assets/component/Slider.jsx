@@ -49,7 +49,7 @@ const Slider = (props) => {
 
   return (
     <div className="relative container mx-auto mt-5 mx-auto ">
-      <h2 className="text-l sm:text-2xl font-normal text-white mb-4">
+      <h2 className="text-l sm:text-xl font-normal text-white mb-6">
         {props.heading}
       </h2>
 

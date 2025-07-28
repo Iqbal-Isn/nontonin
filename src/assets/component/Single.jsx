@@ -22,7 +22,7 @@ const Single = () => {
   useEffect(() => {
     const url = `${api}/3/${type}/${id}?language=en-US`;
     const url2 = `${api}/3/${type}/${id}/credits`;
-    const url3 = `https://api.themoviedb.org/3/${type}/${id}/videos?language=en-US
+    const url3 = `${api}/3/${type}/${id}/videos?language=en-US
 `;
 
     const options = {
@@ -62,7 +62,7 @@ const Single = () => {
     return (
       <>
         <div className="h-screen flex justify-center items-center bg-black">
-          <PacmanLoader color="#ffffff" size={80} />
+          <PacmanLoader color="#ffffff" size={40} />
         </div>
       </>
     );

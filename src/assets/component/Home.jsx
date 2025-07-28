@@ -56,7 +56,7 @@ const Home = () => {
     return (
       <>
         <div className="h-screen flex justify-center items-center bg-black">
-          <PacmanLoader color="#ffffff" size={80} />
+          <PacmanLoader color="#ffffff" size={40} />
         </div>
       </>
     );
