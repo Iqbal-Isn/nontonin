@@ -44,7 +44,6 @@ const Single = () => {
         const data2 = await res2.json();
         const data3 = await res3.json();
 
-        console.log(data1);
         setTrailer(data3.results[0]);
         setMovie(data1);
         setCast(data2.cast);
@@ -163,22 +162,24 @@ const Single = () => {
             ))}
           heading="Cast Member"
         />
-        <div className="relative container mx-auto mt-5 mx-auto pb-10">
-          <h2 className="text-l sm:text-2xl font-normal text-white mb-4">
-            Trailer
-          </h2>
-          <div className="w-[100%] h-[200px] sm:w-[50%] sm:h-[315px]">
-            <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${trailer.key}`}
-              title="YouTube trailer"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+        {trailer && (
+          <div className="relative container mx-auto mt-5 mx-auto pb-10">
+            <h2 className="text-l sm:text-2xl font-normal text-white mb-4">
+              Trailer
+            </h2>
+            <div className="w-[100%] h-[200px] sm:w-[50%] sm:h-[315px]">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${trailer.key}`}
+                title="YouTube trailer"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
