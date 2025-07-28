@@ -1,7 +1,7 @@
 const Card = (props) => {
   return (
     <div>
-      <div className="relative w-[110px] h-[100%] sm:w-[200px] sm:h-[320px] rounded-md overflow-hidden shadow-lg bg-gray-800 flex-shrink-0 group">
+      <div className="relative w-[110px] h-[165px] sm:w-[200px] sm:h-[320px] rounded-md overflow-hidden shadow-lg bg-gray-800 flex-shrink-0 group">
         <img
           src={props.image}
           alt={props.title}
@@ -9,7 +9,7 @@ const Card = (props) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#000307]/20 via-transparent to-transparent z-10"></div>
       </div>
-      <p className="mt-3 text-sm sm:text-md text-white text-center w-[80px] sm:w-[200px] line-clamp-2">
+      <p className="mt-3 text-sm sm:text-md text-white text-center w-[110px] sm:w-[200px] line-clamp-2 items-center">
         {props.title}
       </p>
     </div>

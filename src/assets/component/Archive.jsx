@@ -55,7 +55,7 @@ const Archive = () => {
     return (
       <>
         <div className="h-screen flex justify-center items-center bg-black">
-          <PacmanLoader color="#ffffff" size={60} />
+          <PacmanLoader color="#ffffff" size={40} />
         </div>
       </>
     );

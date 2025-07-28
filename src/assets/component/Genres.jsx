@@ -46,7 +46,7 @@ function Genres() {
   }, []);
 
   return (
-    <div className="relative container mx-auto mt-5 mb-10 pl-4 sm:pl-2">
+    <div className="relative container mx-auto mt-5 mb-10 px-4 sm:pl-2">
       <div className="flex flex-nowrap sm:flex-wrap gap-2 overflow-x-auto scrollbar-hide">
         {genre.map((genre) => (
           <Link

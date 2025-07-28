@@ -19,7 +19,7 @@ const Banner = () => {
 
     fetch(url, options)
       .then((res) => res.json())
-      .then((json) => setMovie(json.results[16]))
+      .then((json) => setMovie(json.results[4]))
       .catch((err) => console.error(err));
   }, []);
 
