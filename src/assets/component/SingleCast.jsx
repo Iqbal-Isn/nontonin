@@ -122,36 +122,40 @@ const SingleCast = () => {
       {/* Related Movies & TV */}
 
       <Slider
-        contents={movie.slice(0).map((item, index) => {
-          const type = item.title || item.original_title ? "movie" : "tv";
-          return (
-            <div key={index} className="shrink-0 mb-8 sm:mb-16">
-              <Link to={`/${type}/${item.id}`}>
-                <Card
-                  title={item.original_title || item.name || item.title}
-                  image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </Link>
-            </div>
-          );
-        })}
+        contents={movie
+          .filter((item) => item.poster_path)
+          .map((item, index) => {
+            const type = item.title || item.original_title ? "movie" : "tv";
+            return (
+              <div key={index} className="shrink-0 mb-8 sm:mb-16">
+                <Link to={`/${type}/${item.id}`}>
+                  <Card
+                    title={item.original_title || item.name || item.title}
+                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                  />
+                </Link>
+              </div>
+            );
+          })}
         heading="Popular Movies"
       />
 
       <Slider
-        contents={tv.slice(0).map((item, index) => {
-          const type = item.title || item.original_title ? "movie" : "tv";
-          return (
-            <div key={index} className="shrink-0">
-              <Link to={`/${type}/${item.id}`}>
-                <Card
-                  title={item.original_title || item.name || item.title}
-                  image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-                />
-              </Link>
-            </div>
-          );
-        })}
+        contents={tv
+          .filter((item) => item.poster_path)
+          .map((item, index) => {
+            const type = item.title || item.original_title ? "movie" : "tv";
+            return (
+              <div key={index} className="shrink-0">
+                <Link to={`/${type}/${item.id}`}>
+                  <Card
+                    title={item.original_title || item.name || item.title}
+                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                  />
+                </Link>
+              </div>
+            );
+          })}
         heading="Popular TV Shows"
       />
     </div>

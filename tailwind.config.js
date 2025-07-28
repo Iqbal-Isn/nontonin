@@ -1,14 +1,10 @@
 // tailwind.config.js
 module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // sesuaikan dengan struktur proyekmu
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1rem",
-        lg: "2rem",
-        xl: "3rem",
-      },
-    },
+    extend: {},
   },
+  plugins: [require("@tailwindcss/line-clamp")],
 };

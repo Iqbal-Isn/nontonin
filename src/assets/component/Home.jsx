@@ -100,30 +100,21 @@ const Home = () => {
         />
 
         <Slider
-          contents={cast.map((cast, key) => (
-            <Link
-              key={key}
-              to={`/cast/${cast.id}`}
-              className="mr-3 sm:mr-6 text-center mb-8"
-            >
-              {cast.profile_path ? (
+          contents={cast
+            .filter((item) => item.profile_path)
+            .map((cast, key) => (
+              <Link
+                key={key}
+                to={`/cast/${cast.id}`}
+                className="mr-3 sm:mr-6 text-center mb-8"
+              >
                 <CastCard
                   image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
                   alt={cast.name}
                   name={cast.name}
                 />
-              ) : (
-                <div className="w-16 sm:w-32">
-                  <div className="w-[100%] h-16 sm:h-32 rounded-full bg-gray-700 flex items-center justify-center text-white text-sm mx-auto">
-                    No Image
-                  </div>
-                  <p className="mt-3 text-sm sm:text-md text-white text-center truncate overflow-hidden whitespace-nowrap w-full">
-                    {cast.name}
-                  </p>
-                </div>
-              )}
-            </Link>
-          ))}
+              </Link>
+            ))}
           heading="Cast Member"
         />
       </div>
