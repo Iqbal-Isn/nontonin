@@ -71,7 +71,7 @@ const Single = () => {
   return (
     <div>
       <div
-        className="relative h-auto text-white flex items-end pt-50"
+        className="relative h-auto text-white flex items-end pt-50 single-cont"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
           backgroundSize: "cover",
@@ -81,22 +81,22 @@ const Single = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#000307] via-[#000307]/50 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#000307] via-transparent to-transparent z-10"></div>
 
-        <div className="container mx-auto px-6 z-20 flex flex-col md:flex-row gap-10 pb-5">
-          <div>
+        <div className="container mx-auto z-20 flex flex-col md:flex-row gap-10 pb-5">
+          <div className="hidden sm:block">
             <Card
               image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             />
           </div>
-          <div className="max-w-xl">
+          <div className="max-w-xl px-4 sm:px-6">
             <h1 className="text-4xl font-bold mb-6">
               {movie.original_title || movie.name}
             </h1>
-            <div className="relative container mx-auto mt-5 mb-5 pl-4 sm:pl-2">
-              <div className="flex flex-nowrap sm:flex-wrap gap-2 overflow-x-auto scrollbar-hide">
+            <div className="relative container mx-auto mt-5 mb-5">
+              <div className="flex flex-wrap gap-2 overflow-x-auto scrollbar-hide">
                 {genre.map((item) => (
                   <Link
                     key={item.id}
-                    className="py-2 sm:px-4 sm:py-2 rounded-md bg-[#1c1c1e] text-gray-300 text-md hover:bg-[#2c2c2e] transition whitespace-nowrap"
+                    className="px-3 py-2 sm:px-4 sm:py-2 rounded-md bg-[#1c1c1e] text-gray-300 text-sm  hover:bg-[#2c2c2e] transition whitespace-nowrap"
                   >
                     {item.name}
                   </Link>
@@ -144,37 +144,41 @@ const Single = () => {
           </div>
         </div>
       </div>
-      <Slider
-        contents={cast
-          .filter((item) => item.profile_path)
-          .map((cast, key) => (
-            <Link
-              key={key}
-              to={`/cast/${cast.id}`}
-              className="mr-3 sm:mr-6 text-center mb-8"
-            >
-              <CastCard
-                image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
-                alt={cast.name}
-                name={cast.name}
-              />
-            </Link>
-          ))}
-        heading="Cast Member"
-      />
-      <div className="relative container mx-auto mt-5 mx-auto pb-10">
-        <h2 className="text-l sm:text-2xl font-normal text-white mb-4">
-          Trailer
-        </h2>
-        {/* <iframe
-          width="560"
-          height="315"
-          src={`https://www.youtube.com/embed/${trailer.key}`}
-          title="YouTube trailer"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe> */}
+      <div className="px-4 sm:px-6">
+        <Slider
+          contents={cast
+            .filter((item) => item.profile_path)
+            .map((cast, key) => (
+              <Link
+                key={key}
+                to={`/cast/${cast.id}`}
+                className="mr-3 sm:mr-6 text-center mb-8"
+              >
+                <CastCard
+                  image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
+                  alt={cast.name}
+                  name={cast.name}
+                />
+              </Link>
+            ))}
+          heading="Cast Member"
+        />
+        <div className="relative container mx-auto mt-5 mx-auto pb-10">
+          <h2 className="text-l sm:text-2xl font-normal text-white mb-4">
+            Trailer
+          </h2>
+          <div className="w-[100%] h-[200px] sm:w-[50%] sm:h-[315px]">
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${trailer.key}`}
+              title="YouTube trailer"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   );
