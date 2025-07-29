@@ -83,7 +83,7 @@ const Archive = () => {
                     <Link to={`/${type}/${item.id}`}>
                       <Card
                         title={item.original_title || item.name || item.title}
-                        image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                        image={item.poster_path}
                       />
                     </Link>
                   </div>
@@ -104,7 +104,7 @@ const Archive = () => {
                     <Link to={`/${type}/${item.id}`}>
                       <Card
                         title={item.original_title || item.name || item.title}
-                        image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                        image={item.poster_path}
                       />
                     </Link>
                   </div>

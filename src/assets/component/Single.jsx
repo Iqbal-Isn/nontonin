@@ -82,9 +82,7 @@ const Single = () => {
 
         <div className="container mx-auto z-20 flex flex-col md:flex-row gap-10 pb-5">
           <div className="hidden sm:block">
-            <Card
-              image={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-            />
+            <Card image={movie.poster_path} />
           </div>
           <div className="max-w-xl px-4 sm:px-6">
             <h1 className="text-4xl font-bold mb-6">
@@ -154,7 +152,7 @@ const Single = () => {
                 className="mr-3 sm:mr-6 text-center mb-8"
               >
                 <CastCard
-                  image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
+                  image={cast.profile_path}
                   alt={cast.name}
                   name={cast.name}
                 />

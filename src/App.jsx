@@ -7,6 +7,7 @@ import SearchPage from "./assets/component/SearchPage";
 import SingleCast from "./assets/component/SingleCast";
 import Archive from "./assets/component/Archive";
 import Footer from "./assets/component/Footer";
+import NotFound from "./assets/component/NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/genre/:id" element={<Archive />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/cast/:id" element={<SingleCast />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

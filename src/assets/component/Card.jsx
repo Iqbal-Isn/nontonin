@@ -3,7 +3,8 @@ const Card = (props) => {
     <div>
       <div className="relative w-[110px] h-[165px] sm:w-[200px] sm:h-[320px] rounded-md overflow-hidden shadow-lg bg-gray-800 flex-shrink-0 group">
         <img
-          src={props.image}
+          loading="lazy"
+          src={`https://image.tmdb.org/t/p/w300/${props.image}`}
           alt={props.title}
           className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
         />

@@ -1,6 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Card from "./Card";
+import { useRef, useEffect, useState } from "react";
 
 const Slider = (props) => {
   const scrollRef = useRef(null);

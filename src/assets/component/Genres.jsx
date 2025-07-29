@@ -7,8 +7,8 @@ function Genres() {
   const [genre, setGenre] = useState([]);
 
   useEffect(() => {
-    const url = "https://api.themoviedb.org/3/genre/movie/list?language=en";
-    const url2 = "https://api.themoviedb.org/3/genre/tv/list?language=en";
+    const url = `${api}/3/genre/movie/list?language=en`;
+    const url2 = `${api}/3/genre/tv/list?language=en`;
 
     const options = {
       method: "GET",

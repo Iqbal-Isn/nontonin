@@ -63,7 +63,7 @@ const SingleCast = () => {
         <div className="w-full md:w-1/3 flex justify-center">
           {cast.profile_path ? (
             <img
-              src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+              src={`https://image.tmdb.org/t/p/w300${cast.profile_path}`}
               alt={cast.name}
               className="rounded-full w-38 sm:w-60 h-38 sm:h-60 object-cover"
             />
@@ -127,7 +127,7 @@ const SingleCast = () => {
                 <Link to={`/${type}/${item.id}`}>
                   <Card
                     title={item.original_title || item.name || item.title}
-                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                    image={item.poster_path}
                   />
                 </Link>
               </div>
@@ -146,7 +146,7 @@ const SingleCast = () => {
                 <Link to={`/${type}/${item.id}`}>
                   <Card
                     title={item.original_title || item.name || item.title}
-                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                    image={item.poster_path}
                   />
                 </Link>
               </div>

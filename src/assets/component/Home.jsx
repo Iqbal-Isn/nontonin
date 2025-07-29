@@ -78,7 +78,7 @@ const Home = () => {
                 <Link to={`/${type}/${item.id}`}>
                   <Card
                     title={item.original_title || item.name || item.title}
-                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                    image={item.poster_path}
                   />
                 </Link>
               </div>
@@ -95,7 +95,7 @@ const Home = () => {
                 <Link to={`/${type}/${item.id}`}>
                   <Card
                     title={item.original_title || item.name || item.title}
-                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                    image={item.poster_path}
                   />
                 </Link>
               </div>
@@ -114,7 +114,7 @@ const Home = () => {
                 className="mr-3 sm:mr-6 text-center mb-12"
               >
                 <CastCard
-                  image={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}
+                  image={cast.profile_path}
                   alt={cast.name}
                   name={cast.name}
                 />
@@ -131,7 +131,7 @@ const Home = () => {
                 <Link to={`/${type}/${item.id}`}>
                   <Card
                     title={item.original_title || item.name || item.title}
-                    image={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+                    image={item.poster_path}
                   />
                 </Link>
               </div>
