@@ -27,11 +27,12 @@ const Banner = () => {
 
   return (
     <div
-      className="relative h-[400px] sm:h-[600px] text-white flex sm:items-center items-end"
+      className="relative h-[400px] sm:h-[600px] text-white flex sm:items-center items-end bg-black"
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${movie.backdrop_path})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-[#000307] via-[#000307]/50 to-transparent z-10"></div>

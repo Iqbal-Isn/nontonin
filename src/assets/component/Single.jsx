@@ -70,9 +70,9 @@ const Single = () => {
   return (
     <div>
       <div
-        className="relative h-auto text-white flex items-end pt-50 single-cont"
+        className="relative h-auto text-white flex items-end pt-50 single-cont bg-black"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${movie.backdrop_path})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
