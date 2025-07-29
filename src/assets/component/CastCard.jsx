@@ -4,7 +4,7 @@ const CastCard = (props) => {
   return (
     <div className="flex flex-col items-center w-16 sm:w-32 shrink-0">
       <img
-        src={`https://image.tmdb.org/t/p/w500/${props.image}`}
+        src={`https://image.tmdb.org/t/p/w300/${props.image}`}
         alt={props.alt}
         className="w-[100%] h-16 sm:h-32 rounded-full object-cover shadow-md"
       />
