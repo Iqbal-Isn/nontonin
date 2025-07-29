@@ -6,27 +6,23 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-black/90 backdrop-blur text-gray-400 py-10">
       <div className="container mx-auto px-4 flex flex-col items-center space-y-6">
         {/* Top Links */}
         <div className="flex flex-wrap justify-center gap-6 text-sm sm:text-md">
-          <a href="#" className="hover:underline">
-            About
-          </a>
-          <a href="#" className="hover:underline">
-            Privacy & Policy
-          </a>
-          <a href="#" className="hover:underline">
-            Contact
-          </a>
-          <a href="#" className="hover:underline">
-            Accessibility
-          </a>
-          <a href="#" className="hover:underline">
-            Partners
-          </a>
+          <Link to="/about">
+            <span className="hover:underline">About</span>
+          </Link>
+          <Link to="/privacy&policy">
+            <span className="hover:underline">Privacy & Policy</span>
+          </Link>
+          <Link to="/contact">
+            <span className="hover:underline">Contact</span>
+          </Link>
         </div>
 
         {/* Icons */}
