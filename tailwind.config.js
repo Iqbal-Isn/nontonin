@@ -1,12 +1,9 @@
-// tailwind.config.js
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {
-      fontFamily: {
-        inter: ["Inter", "sans-serif"],
-      },
+export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
+export const theme = {
+  extend: {
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
 };
+export const plugins = [require("@tailwindcss/line-clamp")];
